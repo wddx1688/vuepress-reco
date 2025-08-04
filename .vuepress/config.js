@@ -1,6 +1,6 @@
 module.exports = {
-  "title": "免费机场每日分享",
-  "description": "出海第一站，从这里开始！精选优质免费机场试用，每日更新。",
+  "title": "免费机场分享站",
+  "description": "自由上网，从这里开始！精选优质免费机场，持续更新。",
   "dest": "public",
   "head": [
     [
@@ -21,21 +21,21 @@ module.exports = {
       "meta",
       {
         "name": "keywords",
-        "content": "免费机场,免费VPN,免费代理,机场试用,科学上网,翻墙工具,出海工具"
+        "content": "免费机场,免费VPN,免费代理,机场,科学上网,翻墙工具,出海工具"
       }
     ],
     [
       "meta",
       {
         "property": "og:title",
-        "content": "免费机场每日分享 - 出海第一站"
+        "content": "免费机场分享站 - 自由上网，从这里开始！"
       }
     ],
     [
       "meta",
       {
         "property": "og:description", 
-        "content": "精选优质免费机场试用，每日更新，让您的网络访问更自由"
+        "content": "精选优质免费机场，持续更新，让您的网络访问更自由"
       }
     ]
   ],
@@ -48,18 +48,13 @@ module.exports = {
         "icon": "reco-home"
       },
       {
-        "text": "每日推荐",
-        "link": "/blogs/daily/",
-        "icon": "reco-date"
-      },
-      {
-        "text": "免费试用",
+        "text": "免费机场",
         "link": "/blogs/free/",
         "icon": "reco-api"
       },
       {
-        "text": "付费机场",
-        "link": "/blogs/premium/",
+        "text": "网址导航",
+        "link": "/blogs/navigation/",
         "icon": "reco-other"
       },
       {
@@ -69,31 +64,21 @@ module.exports = {
       }
     ],
     "sidebar": {
-      "/blogs/daily/": [
-        {
-          "title": "每日推荐",
-          "collapsable": false,
-          "children": [
-            ["", "今日推荐"],
-            ["archive", "历史推荐"]
-          ]
-        }
-      ],
       "/blogs/free/": [
         {
-          "title": "免费试用",
+          "title": "免费机场",
           "collapsable": false,
           "children": [
             ["", "所有免费机场"]
           ]
         }
       ],
-      "/blogs/premium/": [
+      "/blogs/navigation/": [
         {
-          "title": "付费机场",
+          "title": "网址导航",
           "collapsable": false,
           "children": [
-            ["", "所有付费机场"]
+            ["", "常用工具"]
           ]
         }
       ]
@@ -101,12 +86,37 @@ module.exports = {
     "type": "blog",
     "blogConfig": {
       "category": {
-        "location": 2,
-        "text": "分类"
+        "location": -1
       },
       "tag": {
-        "location": 3,
-        "text": "标签"
+        "location": -1
+      },
+      "socials": {
+        "github": "wddx1688/vuepress-reco",
+        "gitee": "",
+        "qq": "",
+        "wechat": "",
+        "zhihu": "",
+        "toutiao": "",
+        "juejin": "",
+        "segmentfault": "",
+        "bilibili": "",
+        "youtube": "",
+        "email": ""
+      },
+      "sitemap": {
+        "hostname": "https://impress.edgeone.app"
+      },
+      "feed": {
+        "canonical_url": "https://impress.edgeone.app",
+        "count": 100
+      },
+      "pagination": {
+        "perPage": 6
+      },
+      "archive": {
+        "location": 1,
+        "text": "归档"
       }
     },
     "friendLink": [
@@ -136,9 +146,9 @@ module.exports = {
     ["@vuepress/plugin-medium-zoom"],
     ["@vuepress/plugin-last-updated", {
       "transformer": (timestamp) => {
-        const moment = require('moment');
-        moment.locale('zh-CN');
-        return moment(timestamp).format('YYYY年MM月DD日 HH:mm');
+        const moment = require("moment");
+        moment.locale("zh-CN");
+        return moment(timestamp).format("YYYY年MM月DD日 HH:mm");
       }
     }]
   ]
