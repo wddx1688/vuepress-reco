@@ -1,14 +1,14 @@
 ---
-title: 免费试用机场
+title: 免费机场
 date: 2024-08-04
 categories:
- - 免费试用
+ - 免费机场
 sidebar: auto
 ---
 
-# 免费试用机场汇总
+# 免费机场汇总
 
-## 🔍 当前可用的免费试用机场
+## 🔍 当前可用的免费机场
 
 <div class="airport-card">
 <div class="airport-header">
@@ -60,7 +60,7 @@ sidebar: auto
 
 </div>
 
-## 📊 免费试用统计
+## 📊 免费机场统计
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
 
