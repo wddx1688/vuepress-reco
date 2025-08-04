@@ -1,15 +1,12 @@
 ---
-title: 今日推荐机场
+title: 每日推荐机场
 date: 2024-08-04
 categories:
  - 每日推荐
-tags:
- - 免费机场
- - 今日推荐
 sidebar: auto
 ---
 
-# 今日推荐机场 - 2024年8月4日
+# 每日推荐机场 - 2024年8月4日
 
 <div class="airport-card">
 <div class="airport-header">
@@ -23,7 +20,6 @@ sidebar: auto
 <div class="status-tags">
 <span class="status-tag available">✅ 可用</span>
 <span class="status-tag trial">🆓 免费试用</span>
-<span class="status-tag premium">⭐ 推荐</span>
 </div>
 
 ### 基本信息
@@ -43,18 +39,15 @@ sidebar: auto
 - 🇯🇵 **日本**：8个节点 - 延迟45ms
 - 🇺🇸 **美国**：15个节点 - 延迟180ms
 - 🇸🇬 **新加坡**：12个节点 - 延迟35ms
-- 🇬🇧 **英国**：5个节点 - 延迟200ms
 
 ### 特色功能
 - ✅ Netflix、Disney+解锁
 - ✅ 游戏加速优化
 - ✅ ChatGPT可用
 - ✅ 无广告干扰
-- ✅ 24/7客服支持
 
 <div class="action-buttons">
 <a href="https://example.com/register" class="btn btn-primary" target="_blank">🚀 立即获取</a>
-<a href="/blogs/tutorials/" class="btn btn-secondary">📖 使用教程</a>
 </div>
 
 </div>
@@ -89,43 +82,14 @@ sidebar: auto
 - 🇭🇰 **香港**：8个节点 - 延迟30ms
 - 🇹🇼 **台湾**：6个节点 - 延迟20ms
 - 🇯🇵 **日本**：10个节点 - 延迟50ms
-- 🇺🇸 **美国**：6个节点 - 延迟190ms
 
 ### 特色功能
 - ✅ 流媒体解锁
 - ✅ 稳定连接保障
 - ✅ 24小时客服
-- ✅ 多平台支持
 
 <div class="action-buttons">
 <a href="https://example2.com/trial" class="btn btn-primary" target="_blank">🚀 立即获取</a>
-<a href="/blogs/tutorials/" class="btn btn-secondary">📖 使用教程</a>
-</div>
-
-</div>
-
-## 📊 今日统计
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
-
-<div class="airport-card" style="text-align: center; padding: 20px;">
-<h3 style="color: #667eea; margin: 0;">2</h3>
-<p style="margin: 5px 0;">推荐机场数量</p>
-</div>
-
-<div class="airport-card" style="text-align: center; padding: 20px;">
-<h3 style="color: #667eea; margin: 0;">48小时</h3>
-<p style="margin: 5px 0;">平均试用时长</p>
-</div>
-
-<div class="airport-card" style="text-align: center; padding: 20px;">
-<h3 style="color: #667eea; margin: 0;">7.5GB</h3>
-<p style="margin: 5px 0;">平均试用流量</p>
-</div>
-
-<div class="airport-card" style="text-align: center; padding: 20px;">
-<h3 style="color: #667eea; margin: 0;">80+</h3>
-<p style="margin: 5px 0;">总节点数量</p>
 </div>
 
 </div>
