@@ -1,7 +1,7 @@
 {
   "name": "free-airport-blog",
   "version": "1.0.0",
-  "description": "免费机场每日分享 - 出海第一站",
+  "description": "免费机场分享站 - 自由上网，从这里开始！",
   "scripts": {
     "dev": "vuepress dev .",
     "build": "vuepress build .",
