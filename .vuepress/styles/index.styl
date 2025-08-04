@@ -13,6 +13,10 @@ body
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)
   min-height: 100vh
 
+// 暗色模式背景
+.dark body
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%)
+
 // 导航栏样式
 .navbar
   background: rgba(255, 255, 255, 0.95) !important
@@ -26,6 +30,12 @@ body
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
     background-clip: text
+
+// 暗色模式导航栏
+.dark .navbar
+  background: rgba(26, 26, 26, 0.95) !important
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)
 
 // 首页横幅样式
 .home
@@ -169,6 +179,20 @@ body
         transform: translateY(-2px)
         box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
 
+// 暗色模式功能卡片
+.dark .features
+  background: #1a1a1a
+  
+  .feature-card
+    background: #2d3748
+    color: #e2e8f0
+    
+    h3
+      color: #e2e8f0
+      
+    p
+      color: #a0aec0
+
 // 内容页面样式
 .theme-reco-content
   // 机场卡片样式
@@ -220,84 +244,198 @@ body
           color: #666
           font-size: 0.9rem
 
-  // 状态标签
-  .status-tags
-    margin: 15px 0
-    
-    .status-tag
-      display: inline-block
-      padding: 4px 12px
-      margin: 4px 8px 4px 0
-      border-radius: 20px
-      font-size: 12px
-      font-weight: 600
+// 暗色模式机场卡片
+.dark .theme-reco-content .airport-card
+  background: #2d3748
+  color: #e2e8f0
+  
+  .airport-info
+    h3
+      color: #e2e8f0
       
-      &.available
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
-        color: white
-        
-      &.trial
-        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
-        color: white
-        
-      &.premium
-        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
-        color: white
+    .airport-desc
+      color: #a0aec0
 
-  // 信息表格
-  .info-table
-    width: 100%
-    border-collapse: collapse
-    margin: 20px 0
-    background: #f8f9fa
-    border-radius: 12px
-    overflow: hidden
+// 状态标签
+.status-tags
+  margin: 15px 0
+  
+  .status-tag
+    display: inline-block
+    padding: 4px 12px
+    margin: 4px 8px 4px 0
+    border-radius: 20px
+    font-size: 12px
+    font-weight: 600
     
-    th, td
-      padding: 15px 20px
-      text-align: left
-      border-bottom: 1px solid #e9ecef
+    &.available
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
+      color: white
       
-    th
+    &.trial
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
+      color: white
+      
+    &.premium
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
+      color: white
+
+// 信息表格
+.info-table
+  width: 100%
+  border-collapse: collapse
+  margin: 20px 0
+  background: #f8f9fa
+  border-radius: 12px
+  overflow: hidden
+  
+  th, td
+    padding: 15px 20px
+    text-align: left
+    border-bottom: 1px solid #e9ecef
+    
+  th
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    color: white
+    font-weight: 600
+    
+  tr:last-child td
+    border-bottom: none
+    
+  tr:hover
+    background: #f1f3f4
+
+// 暗色模式信息表格
+.dark .info-table
+  background: #2d3748
+  
+  th, td
+    border-bottom: 1px solid #4a5568
+    color: #e2e8f0
+    
+  tr:hover
+    background: #4a5568
+
+// 操作按钮
+.action-buttons
+  margin: 20px 0
+  text-align: center
+  
+  .btn
+    display: inline-block
+    margin: 0 10px
+    padding: 12px 30px
+    border-radius: 25px
+    text-decoration: none
+    font-weight: 600
+    transition: all 0.3s ease
+    
+    &.btn-primary
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
       color: white
-      font-weight: 600
       
-    tr:last-child td
-      border-bottom: none
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+        
+    &.btn-secondary
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)
+      color: #8b4513
       
-    tr:hover
-      background: #f1f3f4
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 8px 25px rgba(252, 182, 159, 0.4)
 
-  // 操作按钮
-  .action-buttons
-    margin: 20px 0
-    text-align: center
+// 模式切换按钮样式
+.mode-toggle
+  position: fixed
+  bottom: 20px
+  right: 20px
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+  border: none
+  color: white
+  font-size: 20px
+  cursor: pointer
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+  transition: all 0.3s ease
+  z-index: 1000
+  
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+
+// 公告栏样式增强
+.bulletin-popover
+  .bulletin-wrapper
+    background: white
+    border-radius: 12px
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15)
+    border: 1px solid #e2e8f0
     
-    .btn
-      display: inline-block
-      margin: 0 10px
-      padding: 12px 30px
-      border-radius: 25px
-      text-decoration: none
-      font-weight: 600
-      transition: all 0.3s ease
+  .bulletin-title
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    color: white
+    padding: 15px 20px
+    border-radius: 12px 12px 0 0
+    font-weight: 600
+    
+  .bulletin-body
+    padding: 20px
+    
+    .bulletin-item
+      margin-bottom: 10px
       
-      &.btn-primary
+      &.title
+        font-weight: 600
+        color: #2c3e50
+        font-size: 16px
+        margin: 15px 0 10px 0
+        
+      &.text
+        color: #666
+        line-height: 1.6
+        
+      &.hr
+        border-top: 1px solid #e2e8f0
+        margin: 15px 0
+        
+    .bulletin-buttons
+      display: flex
+      gap: 10px
+      margin-top: 15px
+      
+      .bulletin-btn
+        padding: 8px 16px
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
         color: white
+        text-decoration: none
+        border-radius: 6px
+        font-size: 12px
+        transition: all 0.3s ease
         
         &:hover
-          transform: translateY(-2px)
-          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
-          
-      &.btn-secondary
-        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)
-        color: #8b4513
+          transform: translateY(-1px)
+          box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
+
+// 暗色模式公告栏
+.dark .bulletin-popover
+  .bulletin-wrapper
+    background: #2d3748
+    border: 1px solid #4a5568
+    
+  .bulletin-body
+    .bulletin-item
+      &.title
+        color: #e2e8f0
         
-        &:hover
-          transform: translateY(-2px)
-          box-shadow: 0 8px 25px rgba(252, 182, 159, 0.4)
+      &.text
+        color: #a0aec0
+        
+      &.hr
+        border-top: 1px solid #4a5568
 
 // 响应式设计
 @media (max-width: 768px)
@@ -317,6 +455,13 @@ body
   .airport-card
     margin: 20px 10px
     padding: 20px
+    
+  .mode-toggle
+    bottom: 15px
+    right: 15px
+    width: 45px
+    height: 45px
+    font-size: 18px
 
 // 动画效果
 @keyframes fadeInUp
@@ -329,6 +474,17 @@ body
 
 .airport-card
   animation: fadeInUp 0.6s ease-out
+
+@keyframes slideInRight
+  from
+    opacity: 0
+    transform: translateX(30px)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+.bulletin-popover
+  animation: slideInRight 0.4s ease-out
 
 // 滚动条样式
 ::-webkit-scrollbar
@@ -345,3 +501,14 @@ body
   
   &:hover
     background: linear-gradient(135deg, #5a6fd8, #6a4190)
+
+// 暗色模式滚动条
+.dark ::-webkit-scrollbar-track
+  background: #2d3748
+
+.dark ::-webkit-scrollbar-thumb
+  background: linear-gradient(135deg, #4a5568, #2d3748)
+  
+  &:hover
+    background: linear-gradient(135deg, #667eea, #764ba2)
+
