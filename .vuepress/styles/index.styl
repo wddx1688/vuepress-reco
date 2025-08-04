@@ -1,18 +1,188 @@
-// 全局样式定制
-.theme-reco-content
-  // 机场卡片样式
-  .airport-card
-    border: 1px solid #e1e4e8
-    border-radius: 12px
-    padding: 20px
-    margin: 20px 0
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%)
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1)
+// 全局变量
+$accentColor = #667eea
+$textColor = #2c3e50
+$borderColor = #eaecef
+$codeBgColor = #282c34
+
+// 全局样式重置
+*
+  box-sizing: border-box
+
+// 主体背景
+body
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)
+  min-height: 100vh
+
+// 导航栏样式
+.navbar
+  background: rgba(255, 255, 255, 0.95) !important
+  backdrop-filter: blur(10px)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+
+  .site-name
+    font-weight: 700
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
+
+// 首页横幅样式
+.home
+  .hero
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
+    color: white
+    text-align: center
+    padding: 80px 0
+    position: relative
+    overflow: hidden
+    
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: url('/bg-pattern.png') repeat
+      opacity: 0.1
+      z-index: 1
+    
+    .hero-content
+      position: relative
+      z-index: 2
+    
+    h1
+      font-size: 3.5rem
+      font-weight: 700
+      margin-bottom: 1rem
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)
+      
+    .description
+      font-size: 1.4rem
+      margin-bottom: 2rem
+      opacity: 0.9
+      
+    .hero-image
+      width: 200px
+      height: 200px
+      border-radius: 50%
+      margin: 0 auto 2rem
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3)
+      border: 4px solid rgba(255, 255, 255, 0.2)
+      
+    .action-buttons
+      margin-top: 2rem
+      
+      .action-button
+        display: inline-block
+        margin: 0 10px
+        padding: 12px 30px
+        background: rgba(255, 255, 255, 0.2)
+        color: white
+        text-decoration: none
+        border-radius: 25px
+        font-weight: 600
+        transition: all 0.3s ease
+        border: 2px solid rgba(255, 255, 255, 0.3)
+        backdrop-filter: blur(10px)
+        
+        &:hover
+          background: rgba(255, 255, 255, 0.3)
+          transform: translateY(-2px)
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2)
+
+// 功能卡片样式
+.features
+  padding: 80px 0
+  background: white
+  
+  .feature-cards
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 30px
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 20px
+    
+  .feature-card
+    background: white
+    border-radius: 16px
+    padding: 40px 30px
+    text-align: center
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
     transition: all 0.3s ease
     position: relative
     overflow: hidden
     
-    &:before
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      height: 4px
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)
+      
+    &:hover
+      transform: translateY(-8px)
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15)
+      
+    &:nth-child(1)
+      &::before
+        background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%)
+        
+    &:nth-child(2)
+      &::before
+        background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%)
+        
+    &:nth-child(3)
+      &::before
+        background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%)
+    
+    .feature-icon
+      font-size: 3rem
+      margin-bottom: 1rem
+      
+    h3
+      font-size: 1.5rem
+      font-weight: 600
+      margin-bottom: 1rem
+      color: #2c3e50
+      
+    p
+      color: #666
+      line-height: 1.6
+      margin-bottom: 1.5rem
+      
+    .feature-link
+      display: inline-block
+      padding: 8px 20px
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      color: white
+      text-decoration: none
+      border-radius: 20px
+      font-weight: 500
+      transition: all 0.3s ease
+      
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
+
+// 内容页面样式
+.theme-reco-content
+  // 机场卡片样式
+  .airport-card
+    background: white
+    border-radius: 16px
+    padding: 30px
+    margin: 30px 0
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
+    transition: all 0.3s ease
+    position: relative
+    overflow: hidden
+    
+    &::before
       content: ''
       position: absolute
       top: 0
@@ -22,136 +192,135 @@
       background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)
     
     &:hover
-      transform: translateY(-2px)
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15)
+      transform: translateY(-4px)
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15)
+      
+    .airport-header
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+      
+      .airport-logo
+        width: 60px
+        height: 60px
+        border-radius: 12px
+        margin-right: 20px
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+        
+      .airport-info
+        flex: 1
+        
+        h3
+          margin: 0 0 8px 0
+          font-size: 1.5rem
+          font-weight: 600
+          color: #2c3e50
+          
+        .airport-desc
+          color: #666
+          font-size: 0.9rem
 
-  // 状态指示器
-  .status-indicator
-    display: inline-flex
-    align-items: center
-    padding: 4px 12px
-    border-radius: 20px
-    font-size: 12px
-    font-weight: 600
-    margin-right: 8px
+  // 状态标签
+  .status-tags
+    margin: 15px 0
     
-    &.available
-      background: linear-gradient(135deg, #28a745, #20c997)
-      color: white
+    .status-tag
+      display: inline-block
+      padding: 4px 12px
+      margin: 4px 8px 4px 0
+      border-radius: 20px
+      font-size: 12px
+      font-weight: 600
       
-    &.trial
-      background: linear-gradient(135deg, #007bff, #6610f2)
-      color: white
-      
-    &.limited
-      background: linear-gradient(135deg, #ffc107, #fd7e14)
-      color: white
-      
-    &.expired
-      background: linear-gradient(135deg, #dc3545, #e83e8c)
-      color: white
+      &.available
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
+        color: white
+        
+      &.trial
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
+        color: white
+        
+      &.premium
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
+        color: white
+        
+      &.limited
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)
+        color: #8b4513
 
-  // 机场信息表格
-  .airport-info-table
+  // 信息表格
+  .info-table
     width: 100%
     border-collapse: collapse
-    margin: 16px 0
+    margin: 20px 0
+    background: #f8f9fa
+    border-radius: 12px
+    overflow: hidden
     
     th, td
-      padding: 12px 16px
+      padding: 15px 20px
       text-align: left
       border-bottom: 1px solid #e9ecef
       
     th
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef)
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+      color: white
       font-weight: 600
-      color: #495057
+      
+    tr:last-child td
+      border-bottom: none
       
     tr:hover
-      background-color: #f8f9fa
+      background: #f1f3f4
 
-  // 复制按钮
-  .copy-btn
-    background: linear-gradient(135deg, #007bff, #0056b3)
-    color: white
-    border: none
-    padding: 8px 16px
-    border-radius: 6px
-    cursor: pointer
-    font-size: 14px
-    font-weight: 500
-    transition: all 0.3s ease
+  // 操作按钮
+  .action-buttons
+    margin: 20px 0
+    text-align: center
     
-    &:hover
-      background: linear-gradient(135deg, #0056b3, #004085)
-      transform: translateY(-1px)
-      box-shadow: 0 4px 12px rgba(0,123,255,0.3)
-
-  // 评分星级
-  .rating-stars
-    display: inline-flex
-    align-items: center
-    
-    .star
-      color: #ffc107
-      font-size: 16px
-      margin-right: 2px
-      
-    .rating-text
-      margin-left: 8px
-      font-size: 14px
-      color: #6c757d
-
-  // 标签样式
-  .airport-tags
-    margin: 12px 0
-    
-    .tag
+    .btn
       display: inline-block
-      padding: 4px 8px
-      margin: 2px 4px 2px 0
-      background: linear-gradient(135deg, #e9ecef, #dee2e6)
-      color: #495057
-      border-radius: 4px
-      font-size: 12px
-      font-weight: 500
-
-// 首页横幅优化
-.banner-brand
-  .banner-brand-content
-    .title
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      background-clip: text
-      font-weight: 700
-
-// 导航栏样式优化
-.navbar
-  backdrop-filter: blur(10px)
-  background: rgba(255, 255, 255, 0.95)
-  border-bottom: 1px solid rgba(0,0,0,0.1)
-
-// 侧边栏优化
-.sidebar
-  .sidebar-group
-    .sidebar-heading
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef)
-      border-radius: 6px
-      padding: 8px 12px
-      margin-bottom: 8px
+      margin: 0 10px
+      padding: 12px 30px
+      border-radius: 25px
+      text-decoration: none
+      font-weight: 600
+      transition: all 0.3s ease
+      
+      &.btn-primary
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+        color: white
+        
+        &:hover
+          transform: translateY(-2px)
+          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+          
+      &.btn-secondary
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)
+        color: #8b4513
+        
+        &:hover
+          transform: translateY(-2px)
+          box-shadow: 0 8px 25px rgba(252, 182, 159, 0.4)
 
 // 响应式设计
 @media (max-width: 768px)
+  .home .hero
+    padding: 60px 20px
+    
+    h1
+      font-size: 2.5rem
+      
+    .description
+      font-size: 1.2rem
+      
+  .features .feature-cards
+    grid-template-columns: 1fr
+    padding: 0 20px
+    
   .airport-card
-    margin: 16px 0
-    padding: 16px
-    
-  .airport-info-table
-    font-size: 14px
-    
-    th, td
-      padding: 8px 12px
+    margin: 20px 10px
+    padding: 20px
 
 // 动画效果
 @keyframes fadeInUp
