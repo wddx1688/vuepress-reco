@@ -65,10 +65,6 @@ module.exports = {
                 "link": "/blogs/vpn/2024/11.html"
               }
             ]
-          },
-          {
-            "text": "所有机场",
-            "link": "/blogs/free/"
           }
         ],
         "icon": "reco-api"
