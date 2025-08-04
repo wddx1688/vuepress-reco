@@ -1,3 +1,7 @@
 node_modules/
-yarn.lock
-yarn.error
+public/
+.temp/
+.cache/
+.DS_Store
+*.log
+.vuepress/dist/
