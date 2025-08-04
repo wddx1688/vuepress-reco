@@ -1,514 +1,361 @@
-// 全局变量
-$accentColor = #667eea
-$textColor = #2c3e50
-$borderColor = #eaecef
-$codeBgColor = #282c34
-
-// 全局样式重置
-*
-  box-sizing: border-box
-
-// 主体背景
-body
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)
-  min-height: 100vh
-
-// 暗色模式背景
-.dark body
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%)
-
-// 导航栏样式
-.navbar
-  background: rgba(255, 255, 255, 0.95) !important
-  backdrop-filter: blur(10px)
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
-
-  .site-name
-    font-weight: 700
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    background-clip: text
-
-// 暗色模式导航栏
-.dark .navbar
-  background: rgba(26, 26, 26, 0.95) !important
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)
-
-// 首页横幅样式
-.home
-  .hero
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
-    color: white
-    text-align: center
-    padding: 80px 0
-    position: relative
-    overflow: hidden
+// 自定义样式，参考 ygpy.net 设计
+.home-blog {
+  // 首页背景渐变
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    position: relative;
+    overflow: hidden;
     
-    &::before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      background: url('/bg-pattern.png') repeat
-      opacity: 0.1
-      z-index: 1
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/bg-gradient.jpg') center/cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
     
-    .hero-content
-      position: relative
-      z-index: 2
-    
-    h1
-      font-size: 3.5rem
-      font-weight: 700
-      margin-bottom: 1rem
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)
+    .hero-info {
+      position: relative;
+      z-index: 1;
       
-    .description
-      font-size: 1.4rem
-      margin-bottom: 2rem
-      opacity: 0.9
-      
-    .hero-image
-      width: 200px
-      height: 200px
-      border-radius: 50%
-      margin: 0 auto 2rem
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3)
-      border: 4px solid rgba(255, 255, 255, 0.2)
-      
-    .action-buttons
-      margin-top: 2rem
-      
-      .action-button
-        display: inline-block
-        margin: 0 10px
-        padding: 12px 30px
-        background: rgba(255, 255, 255, 0.2)
-        color: white
-        text-decoration: none
-        border-radius: 25px
-        font-weight: 600
-        transition: all 0.3s ease
-        border: 2px solid rgba(255, 255, 255, 0.3)
-        backdrop-filter: blur(10px)
+      .hero-img {
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
         
-        &:hover
-          background: rgba(255, 255, 255, 0.3)
-          transform: translateY(-2px)
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2)
-
-// 功能卡片样式
-.features
-  padding: 80px 0
-  background: white
-  
-  .feature-cards
-    display: grid
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-    gap: 30px
-    max-width: 1200px
-    margin: 0 auto
-    padding: 0 20px
-    
-  .feature-card
-    background: white
-    border-radius: 16px
-    padding: 40px 30px
-    text-align: center
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
-    transition: all 0.3s ease
-    position: relative
-    overflow: hidden
-    
-    &::before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      height: 4px
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        }
+      }
       
-    &:hover
-      transform: translateY(-8px)
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15)
-      
-    &:nth-child(1)
-      &::before
-        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)
+      h1 {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
         
-    &:nth-child(2)
-      &::before
-        background: linear-gradient(90deg, #fa709a 0%, #fee140 100%)
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+      
+      .description {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+      }
+      
+      .action-button {
+        margin: 0.5rem;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
         
-    &:nth-child(3)
-      &::before
-        background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%)
-    
-    .feature-icon
-      font-size: 3rem
-      margin-bottom: 1rem
-      
-    h3
-      font-size: 1.5rem
-      font-weight: 600
-      margin-bottom: 1rem
-      color: #2c3e50
-      
-    p
-      color: #666
-      line-height: 1.6
-      margin-bottom: 1.5rem
-      
-    .feature-link
-      display: inline-block
-      padding: 8px 20px
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-      color: white
-      text-decoration: none
-      border-radius: 20px
-      font-weight: 500
-      transition: all 0.3s ease
-      
-      &:hover
-        transform: translateY(-2px)
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
-
-// 暗色模式功能卡片
-.dark .features
-  background: #1a1a1a
-  
-  .feature-card
-    background: #2d3748
-    color: #e2e8f0
-    
-    h3
-      color: #e2e8f0
-      
-    p
-      color: #a0aec0
-
-// 内容页面样式
-.theme-reco-content
-  // 机场卡片样式
-  .airport-card
-    background: white
-    border-radius: 16px
-    padding: 30px
-    margin: 30px 0
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
-    transition: all 0.3s ease
-    position: relative
-    overflow: hidden
-    
-    &::before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      height: 4px
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)
-    
-    &:hover
-      transform: translateY(-4px)
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15)
-      
-    .airport-header
-      display: flex
-      align-items: center
-      margin-bottom: 20px
-      
-      .airport-logo
-        width: 60px
-        height: 60px
-        border-radius: 12px
-        margin-right: 20px
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
-        
-      .airport-info
-        flex: 1
-        
-        h3
-          margin: 0 0 8px 0
-          font-size: 1.5rem
-          font-weight: 600
-          color: #2c3e50
+        &.primary {
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          border: none;
+          color: white;
           
-        .airport-desc
-          color: #666
-          font-size: 0.9rem
-
-// 暗色模式机场卡片
-.dark .theme-reco-content .airport-card
-  background: #2d3748
-  color: #e2e8f0
-  
-  .airport-info
-    h3
-      color: #e2e8f0
-      
-    .airport-desc
-      color: #a0aec0
-
-// 状态标签
-.status-tags
-  margin: 15px 0
-  
-  .status-tag
-    display: inline-block
-    padding: 4px 12px
-    margin: 4px 8px 4px 0
-    border-radius: 20px
-    font-size: 12px
-    font-weight: 600
-    
-    &.available
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
-      color: white
-      
-    &.trial
-      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
-      color: white
-      
-    &.premium
-      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
-      color: white
-
-// 信息表格
-.info-table
-  width: 100%
-  border-collapse: collapse
-  margin: 20px 0
-  background: #f8f9fa
-  border-radius: 12px
-  overflow: hidden
-  
-  th, td
-    padding: 15px 20px
-    text-align: left
-    border-bottom: 1px solid #e9ecef
-    
-  th
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-    color: white
-    font-weight: 600
-    
-  tr:last-child td
-    border-bottom: none
-    
-  tr:hover
-    background: #f1f3f4
-
-// 暗色模式信息表格
-.dark .info-table
-  background: #2d3748
-  
-  th, td
-    border-bottom: 1px solid #4a5568
-    color: #e2e8f0
-    
-  tr:hover
-    background: #4a5568
-
-// 操作按钮
-.action-buttons
-  margin: 20px 0
-  text-align: center
-  
-  .btn
-    display: inline-block
-    margin: 0 10px
-    padding: 12px 30px
-    border-radius: 25px
-    text-decoration: none
-    font-weight: 600
-    transition: all 0.3s ease
-    
-    &.btn-primary
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-      color: white
-      
-      &:hover
-        transform: translateY(-2px)
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+          }
+        }
         
-    &.btn-secondary
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)
-      color: #8b4513
-      
-      &:hover
-        transform: translateY(-2px)
-        box-shadow: 0 8px 25px rgba(252, 182, 159, 0.4)
-
-// 模式切换按钮样式
-.mode-toggle
-  position: fixed
-  bottom: 20px
-  right: 20px
-  width: 50px
-  height: 50px
-  border-radius: 50%
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-  border: none
-  color: white
-  font-size: 20px
-  cursor: pointer
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
-  transition: all 0.3s ease
-  z-index: 1000
+        &.secondary {
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          color: white;
+          backdrop-filter: blur(10px);
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
   
-  &:hover
-    transform: translateY(-2px)
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4)
+  // 特色功能卡片
+  .home-blog-wrapper {
+    .blog-list {
+      .abstract-wrapper {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .abstract-item {
+          padding: 1.5rem;
+          
+          .title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
+            
+            a {
+              color: inherit;
+              text-decoration: none;
+              
+              &:hover {
+                color: #667eea;
+              }
+            }
+          }
+          
+          .abstract {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+          }
+          
+          .tags {
+            .tag-item {
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              color: white;
+              padding: 4px 12px;
+              border-radius: 15px;
+              font-size: 0.85rem;
+              margin-right: 0.5rem;
+              margin-bottom: 0.5rem;
+              display: inline-block;
+              transition: all 0.3s ease;
+              
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
-// 公告栏样式增强
-.bulletin-popover
-  .bulletin-wrapper
-    background: white
-    border-radius: 12px
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15)
-    border: 1px solid #e2e8f0
-    
-  .bulletin-title
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-    color: white
-    padding: 15px 20px
-    border-radius: 12px 12px 0 0
-    font-weight: 600
-    
-  .bulletin-body
-    padding: 20px
-    
-    .bulletin-item
-      margin-bottom: 10px
+// 归档页面样式
+.page {
+  .content-wrapper {
+    .content {
+      // 机场推荐卡片样式
+      .airport-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .airport-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+          
+          .airport-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+          }
+          
+          .airport-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            
+            &.recommended {
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              color: white;
+            }
+            
+            &.popular {
+              background: linear-gradient(135deg, #f093fb, #f5576c);
+              color: white;
+            }
+            
+            &.new {
+              background: linear-gradient(135deg, #4facfe, #00f2fe);
+              color: white;
+            }
+          }
+        }
+        
+        .airport-description {
+          color: #666;
+          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+          line-height: 1.6;
+        }
+        
+        .airport-info {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          
+          .info-item {
+            text-align: center;
+            
+            .label {
+              font-size: 0.9rem;
+              color: #999;
+              margin-bottom: 0.5rem;
+            }
+            
+            .value {
+              font-weight: 600;
+              color: #2c3e50;
+              font-size: 1.1rem;
+            }
+          }
+        }
+        
+        .airport-action {
+          text-align: center;
+          
+          .try-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+              color: white;
+            }
+          }
+        }
+      }
       
-      &.title
-        font-weight: 600
-        color: #2c3e50
-        font-size: 16px
-        margin: 15px 0 10px 0
+      // 推广横幅样式
+      .promotion-banner {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        color: white;
+        text-align: center;
         
-      &.text
-        color: #666
-        line-height: 1.6
+        .banner-title {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
         
-      &.hr
-        border-top: 1px solid #e2e8f0
-        margin: 15px 0
+        .banner-subtitle {
+          font-size: 1.2rem;
+          margin-bottom: 1.5rem;
+          opacity: 0.9;
+        }
         
-    .bulletin-buttons
-      display: flex
-      gap: 10px
-      margin-top: 15px
+        .banner-features {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 1.5rem;
+          flex-wrap: wrap;
+          
+          .feature-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+          }
+        }
+        
+        .banner-action {
+          .action-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            
+            &:hover {
+              background: rgba(255, 255, 255, 0.3);
+              transform: translateY(-2px);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 侧边栏样式优化
+.sidebar {
+  .sidebar-links {
+    .sidebar-group {
+      .sidebar-heading {
+        font-weight: 600;
+        color: #2c3e50;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
       
-      .bulletin-btn
-        padding: 8px 16px
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-        color: white
-        text-decoration: none
-        border-radius: 6px
-        font-size: 12px
-        transition: all 0.3s ease
-        
-        &:hover
-          transform: translateY(-1px)
-          box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4)
-
-// 暗色模式公告栏
-.dark .bulletin-popover
-  .bulletin-wrapper
-    background: #2d3748
-    border: 1px solid #4a5568
-    
-  .bulletin-body
-    .bulletin-item
-      &.title
-        color: #e2e8f0
-        
-      &.text
-        color: #a0aec0
-        
-      &.hr
-        border-top: 1px solid #4a5568
-
-// 响应式设计
-@media (max-width: 768px)
-  .home .hero
-    padding: 60px 20px
-    
-    h1
-      font-size: 2.5rem
-      
-    .description
-      font-size: 1.2rem
-      
-  .features .feature-cards
-    grid-template-columns: 1fr
-    padding: 0 20px
-    
-  .airport-card
-    margin: 20px 10px
-    padding: 20px
-    
-  .mode-toggle
-    bottom: 15px
-    right: 15px
-    width: 45px
-    height: 45px
-    font-size: 18px
-
-// 动画效果
-@keyframes fadeInUp
-  from
-    opacity: 0
-    transform: translateY(30px)
-  to
-    opacity: 1
-    transform: translateY(0)
-
-.airport-card
-  animation: fadeInUp 0.6s ease-out
-
-@keyframes slideInRight
-  from
-    opacity: 0
-    transform: translateX(30px)
-  to
-    opacity: 1
-    transform: translateX(0)
-
-.bulletin-popover
-  animation: slideInRight 0.4s ease-out
-
-// 滚动条样式
-::-webkit-scrollbar
-  width: 8px
-  height: 8px
-
-::-webkit-scrollbar-track
-  background: #f1f1f1
-  border-radius: 4px
-
-::-webkit-scrollbar-thumb
-  background: linear-gradient(135deg, #667eea, #764ba2)
-  border-radius: 4px
-  
-  &:hover
-    background: linear-gradient(135deg, #5a6fd8, #6a4190)
-
-// 暗色模式滚动条
-.dark ::-webkit-scrollbar-track
-  background: #2d3748
-
-.dark ::-webkit-scrollbar-thumb
-  background: linear-gradient(135deg, #4a5568, #2d3748)
-  
-  &:hover
-    background: linear-gradient(135deg, #667eea, #764ba2)
+      .sidebar-links {
+        .sidebar-link {
+          a {
+            color: #666;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              color: #667eea;
+              transform: translateX(5px);
+            }
+            
+            &.active {
+              color: #667eea;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
