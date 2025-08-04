@@ -1,8 +1,7 @@
 {
-  "name": "airport-blog",
+  "name": "free-airport-blog",
   "version": "1.0.0",
-  "description": "免费机场每日分享博客",
-  "main": "index.js",
+  "description": "免费机场每日分享 - 出海第一站",
   "scripts": {
     "dev": "vuepress dev .",
     "build": "vuepress build .",
@@ -14,9 +13,10 @@
     "airport",
     "free",
     "vpn",
-    "proxy"
+    "proxy",
+    "出海工具"
   ],
-  "author": "机场分享站",
+  "author": "免费机场分享站",
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.9.7",
@@ -25,10 +25,6 @@
     "@vuepress/plugin-nprogress": "^1.9.7",
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "@vuepress/plugin-last-updated": "^1.9.7",
-    "@vuepress/plugin-pwa": "^1.9.7",
-    "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-reading-progress": "^1.0.10",
     "moment": "^2.29.4"
-  },
-  "dependencies": {}
+  }
 }
