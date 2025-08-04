@@ -1,6 +1,6 @@
 module.exports = {
   "title": "免费机场每日分享",
-  "description": "精选优质免费机场试用，每日更新，让您的网络访问更自由",
+  "description": "出海第一站，从这里开始！精选优质免费机场试用，每日更新。",
   "dest": "public",
   "head": [
     [
@@ -21,21 +21,21 @@ module.exports = {
       "meta",
       {
         "name": "keywords",
-        "content": "免费机场,免费VPN,免费代理,机场试用,科学上网,翻墙工具"
+        "content": "免费机场,免费VPN,免费代理,机场试用,科学上网,翻墙工具,出海工具"
       }
     ],
     [
       "meta",
       {
         "property": "og:title",
-        "content": "免费机场每日分享"
+        "content": "免费机场每日分享 - 出海第一站"
       }
     ],
     [
       "meta",
       {
-        "property": "og:description",
-        "content": "精选优质免费机场试用，每日更新"
+        "property": "og:description", 
+        "content": "精选优质免费机场试用，每日更新，让您的网络访问更自由"
       }
     ]
   ],
@@ -48,29 +48,24 @@ module.exports = {
         "icon": "reco-home"
       },
       {
-        "text": "今日推荐",
-        "link": "/blogs/daily/",
-        "icon": "reco-date"
-      },
-      {
-        "text": "机场分类",
-        "icon": "reco-category",
+        "text": "机场推荐",
+        "icon": "reco-api",
         "items": [
           {
-            "text": "高速机场",
-            "link": "/blogs/high-speed/"
+            "text": "今日推荐",
+            "link": "/blogs/daily/"
           },
           {
-            "text": "稳定机场",
-            "link": "/blogs/stable/"
+            "text": "高速机场",
+            "link": "/blogs/airports/high-speed/"
+          },
+          {
+            "text": "稳定机场", 
+            "link": "/blogs/airports/stable/"
           },
           {
             "text": "游戏专用",
-            "link": "/blogs/gaming/"
-          },
-          {
-            "text": "流媒体专用",
-            "link": "/blogs/streaming/"
+            "link": "/blogs/airports/gaming/"
           },
           {
             "text": "所有机场",
@@ -79,31 +74,31 @@ module.exports = {
         ]
       },
       {
-        "text": "使用教程",
+        "text": "软件列表",
         "icon": "reco-document",
         "items": [
           {
-            "text": "Windows教程",
-            "link": "/blogs/tutorials/windows/"
+            "text": "Windows软件",
+            "link": "/blogs/software/windows/"
           },
           {
-            "text": "macOS教程",
-            "link": "/blogs/tutorials/macos/"
+            "text": "macOS软件",
+            "link": "/blogs/software/macos/"
           },
           {
-            "text": "iOS教程",
-            "link": "/blogs/tutorials/ios/"
+            "text": "移动端软件",
+            "link": "/blogs/software/mobile/"
           },
           {
-            "text": "Android教程",
-            "link": "/blogs/tutorials/android/"
+            "text": "所有软件",
+            "link": "/blogs/software/"
           }
         ]
       },
       {
-        "text": "关于我们",
-        "link": "/blogs/about/",
-        "icon": "reco-message"
+        "text": "网址导航",
+        "link": "/blogs/navigation/",
+        "icon": "reco-other"
       }
     ],
     "sidebar": {
@@ -113,7 +108,6 @@ module.exports = {
           "collapsable": false,
           "children": [
             ["", "今日推荐"],
-            ["yesterday", "昨日推荐"],
             ["archive", "历史推荐"]
           ]
         }
@@ -124,23 +118,22 @@ module.exports = {
           "collapsable": false,
           "children": [
             ["", "所有机场"],
-            ["high-speed", "高速机场"],
-            ["stable", "稳定机场"],
-            ["gaming", "游戏专用"],
-            ["streaming", "流媒体专用"]
+            ["high-speed/", "高速机场"],
+            ["stable/", "稳定机场"],
+            ["gaming/", "游戏专用"],
+            ["streaming/", "流媒体专用"]
           ]
         }
       ],
-      "/blogs/tutorials/": [
+      "/blogs/software/": [
         {
-          "title": "使用教程",
+          "title": "软件分类",
           "collapsable": false,
           "children": [
-            ["", "教程总览"],
-            ["windows/", "Windows教程"],
-            ["macos/", "macOS教程"],
-            ["ios/", "iOS教程"],
-            ["android/", "Android教程"]
+            ["", "所有软件"],
+            ["windows/", "Windows软件"],
+            ["macos/", "macOS软件"],
+            ["mobile/", "移动端软件"]
           ]
         }
       ]
@@ -149,7 +142,7 @@ module.exports = {
     "blogConfig": {
       "category": {
         "location": 2,
-        "text": "机场分类"
+        "text": "分类"
       },
       "tag": {
         "location": 3,
@@ -160,7 +153,6 @@ module.exports = {
       {
         "title": "机场测速",
         "desc": "专业的机场测速工具",
-        "email": "test@example.com",
         "link": "https://example.com"
       }
     ],
@@ -168,10 +160,13 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "最后更新",
-    "author": "机场分享站",
+    "author": "免费机场分享站",
     "authorAvatar": "/avatar.png",
     "record": "免费机场分享",
-    "startYear": "2024"
+    "startYear": "2024",
+    // 自定义样式
+    "mode": "light",
+    "modePicker": false
   },
   "markdown": {
     "lineNumbers": true
@@ -179,25 +174,12 @@ module.exports = {
   "plugins": [
     ["@vuepress/plugin-back-to-top"],
     ["@vuepress/plugin-nprogress"],
-    ["vuepress-plugin-code-copy", {
-      "successText": "复制成功！",
-      "failText": "复制失败！",
-      "showInMobile": true
-    }],
     ["@vuepress/plugin-medium-zoom"],
     ["@vuepress/plugin-last-updated", {
       "transformer": (timestamp) => {
         const moment = require('moment');
         moment.locale('zh-CN');
         return moment(timestamp).format('YYYY年MM月DD日 HH:mm');
-      }
-    }],
-    ["vuepress-plugin-reading-progress"],
-    ["@vuepress/plugin-pwa", {
-      "serviceWorker": true,
-      "updatePopup": {
-        "message": "发现新内容可用",
-        "buttonText": "刷新"
       }
     }]
   ]
