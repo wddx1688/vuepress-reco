@@ -48,57 +48,24 @@ module.exports = {
         "icon": "reco-home"
       },
       {
-        "text": "机场推荐",
-        "icon": "reco-api",
-        "items": [
-          {
-            "text": "今日推荐",
-            "link": "/blogs/daily/"
-          },
-          {
-            "text": "高速机场",
-            "link": "/blogs/airports/high-speed/"
-          },
-          {
-            "text": "稳定机场", 
-            "link": "/blogs/airports/stable/"
-          },
-          {
-            "text": "游戏专用",
-            "link": "/blogs/airports/gaming/"
-          },
-          {
-            "text": "所有机场",
-            "link": "/blogs/airports/"
-          }
-        ]
+        "text": "每日推荐",
+        "link": "/blogs/daily/",
+        "icon": "reco-date"
       },
       {
-        "text": "软件列表",
-        "icon": "reco-document",
-        "items": [
-          {
-            "text": "Windows软件",
-            "link": "/blogs/software/windows/"
-          },
-          {
-            "text": "macOS软件",
-            "link": "/blogs/software/macos/"
-          },
-          {
-            "text": "移动端软件",
-            "link": "/blogs/software/mobile/"
-          },
-          {
-            "text": "所有软件",
-            "link": "/blogs/software/"
-          }
-        ]
+        "text": "免费试用",
+        "link": "/blogs/free/",
+        "icon": "reco-api"
       },
       {
-        "text": "网址导航",
-        "link": "/blogs/navigation/",
+        "text": "付费机场",
+        "link": "/blogs/premium/",
         "icon": "reco-other"
+      },
+      {
+        "text": "关于我们",
+        "link": "/blogs/about/",
+        "icon": "reco-message"
       }
     ],
     "sidebar": {
@@ -112,28 +79,21 @@ module.exports = {
           ]
         }
       ],
-      "/blogs/airports/": [
+      "/blogs/free/": [
         {
-          "title": "机场分类",
+          "title": "免费试用",
           "collapsable": false,
           "children": [
-            ["", "所有机场"],
-            ["high-speed/", "高速机场"],
-            ["stable/", "稳定机场"],
-            ["gaming/", "游戏专用"],
-            ["streaming/", "流媒体专用"]
+            ["", "所有免费机场"]
           ]
         }
       ],
-      "/blogs/software/": [
+      "/blogs/premium/": [
         {
-          "title": "软件分类",
+          "title": "付费机场",
           "collapsable": false,
           "children": [
-            ["", "所有软件"],
-            ["windows/", "Windows软件"],
-            ["macos/", "macOS软件"],
-            ["mobile/", "移动端软件"]
+            ["", "所有付费机场"]
           ]
         }
       ]
@@ -164,7 +124,6 @@ module.exports = {
     "authorAvatar": "/avatar.png",
     "record": "免费机场分享",
     "startYear": "2024",
-    // 自定义样式
     "mode": "light",
     "modePicker": false
   },
